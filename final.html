@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+    /*==================================================
+            RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/*==================================================
+            ROOT COLORS
+==================================================*/
+
+:root{
+
+    --primary:#8a5cff;
+
+    --secondary:#ff4fd8;
+
+    --white:#ffffff;
+
+    --text:#dddddd;
+
+    --glass:rgba(255,255,255,.08);
+
+}
+
+/*==================================================
+            BACKGROUND
+==================================================*/
+
+.bg{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    background:
+
+    radial-gradient(circle at top,#7c5cff35 0%,transparent 40%),
+
+    radial-gradient(circle at bottom,#ff4fd825 0%,transparent 40%),
+
+    linear-gradient(180deg,#040715,#091428);
+
+}
+
+.bg::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:#7c5cff35;
+
+    filter:blur(150px);
+
+    top:-220px;
+
+    left:-200px;
+
+    animation:leftGlow 10s ease-in-out infinite alternate;
+
+}
+
+.bg::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    background:#ff4fd825;
+
+    filter:blur(140px);
+
+    right:-150px;
+
+    bottom:-180px;
+
+    animation:rightGlow 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes leftGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes rightGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+}
+
+/*==================================================
+            FINAL SCREEN
+==================================================*/
+
+.final-screen{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:flex-start;
+    align-items:center;
+
+    text-align:center;
+
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+/*==================================================
+            HEART AREA
+==================================================*/
+
+.heart-wrapper{
+
+    width:320px;
+    height:260px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+/*==================================================
+            SVG HEART
+==================================================*/
+.heart-svg{
+
+    width:220px;
+    height:220px;
+
+    overflow:visible;
+}
+#heartPath{
+
+    fill:none;
+
+    stroke:#ff4fd8;
+
+    stroke-width:12;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    filter:
+
+    drop-shadow(0 0 10px #ff4fd8)
+
+    drop-shadow(0 0 25px #ff4fd8)
+
+    drop-shadow(0 0 50px #8a5cff);
+
+    stroke-dasharray:1600;
+
+    stroke-dashoffset:1600;
+
+    animation:
+
+    drawHeart 4s ease forwards,
+
+    heartGlow 2s ease-in-out infinite alternate 4s;
+
+}
+
+@keyframes drawHeart{
+
+    to{
+
+        stroke-dashoffset:0;
+
+    }
+
+}
+
+@keyframes heartGlow{
+
+    from{
+
+        filter:
+
+        drop-shadow(0 0 10px #ff4fd8)
+
+        drop-shadow(0 0 25px #ff4fd8);
+
+    }
+
+    to{
+
+        filter:
+
+        drop-shadow(0 0 20px #ffffff)
+
+        drop-shadow(0 0 40px #ff4fd8)
+
+        drop-shadow(0 0 80px #8a5cff);
+
+    }
+
+}
+
+/*==================================================
+            CONTENT
+==================================================*/
+
+.content{
+
+    width: 90%;
+
+    max-width:700px;
+
+    opacity:0;
+
+    animation:contentFade 1.5s ease forwards;
+
+    animation-delay:3.8s;
+
+}
+
+@keyframes contentFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+            MAIN TITLE
+==================================================*/
+
+.content h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    font-weight:400;
+
+    color:#ffffff;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+    0 0 12px #ffffff,
+
+    0 0 30px #7c5cff,
+
+    0 0 60px #ff4fd8;
+
+}
+
+/*==================================================
+            SUB TITLE
+==================================================*/
+
+.content h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+    color:#FFD86B;
+
+    margin-bottom:30px;
+
+    text-shadow:
+
+    0 0 15px #FFD86B,
+
+    0 0 30px rgba(255,216,107,.5);
+
+}
+
+/*==================================================
+            MESSAGE
+==================================================*/
+
+.content p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:#dddddd;
+
+    font-size:18px;
+
+    line-height:32px;
+
+    font-weight:400;
+
+}
+
+/*==================================================
+            BUTTON
+==================================================*/
+.button-group{
+
+    display:flex;
+    gap:20px;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-top:50px;
+
+    flex-wrap:wrap;
+}
+#finishBtn{
+
+    position:relative;
+
+    overflow:hidden;
+
+
+    padding:18px 55px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #7c5cff,
+    #ff4fd8
+    );
+
+    box-shadow:
+
+    0 0 25px rgba(124,92,255,.5),
+
+    0 0 60px rgba(255,79,216,.3);
+
+    transition:.35s;
+
+}
+
+#finishBtn:hover{
+
+    transform:
+
+    translateY(-6px)
+
+    scale(1.05);
+
+    box-shadow:
+
+    0 0 35px rgba(124,92,255,.8),
+
+    0 0 80px rgba(255,79,216,.55);
+
+}
+
+#finishBtn:active{
+
+    transform:scale(.96);
+
+}
+
+/*==================================================
+            BUTTON SHINE
+==================================================*/
+
+#finishBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:40%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.6),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 3s linear infinite;
+
+}
+
+@keyframes buttonShine{
+
+    100%{
+
+        left:180%;
+
+    }
+
+}
+
+/*==================================================
+            PARTICLES
+==================================================*/
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.particles::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+
+    radial-gradient(#ffffff 1.5px,transparent 1.5px);
+
+    background-size:70px 70px;
+
+    opacity:.18;
+
+    animation:particleMove 40s linear infinite;
+
+}
+
+@keyframes particleMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-700px);
+
+    }
+
+}
+
+/*==================================================
+            HEART PULSE
+==================================================*/
+
+.heart-wrapper{
+
+    animation:heartBeat 2.2s ease-in-out infinite;
+
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.08);
+
+    }
+
+    50%{
+
+        transform:scale(.98);
+
+    }
+
+    75%{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+/*==================================================
+            TWINKLING STARS
+==================================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-6;
+
+    background-image:
+
+    radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+    background-size:150px 150px;
+
+    opacity:.18;
+
+    animation:twinkle 5s ease-in-out infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.08;
+
+    }
+
+    to{
+
+        opacity:.28;
+
+    }
+
+}
+
+/*==================================================
+            TEXT ANIMATION
+==================================================*/
+
+.content h1{
+
+    animation:titleGlow 2.5s ease-in-out infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+    from{
+
+        text-shadow:
+
+        0 0 10px #fff,
+
+        0 0 25px #7c5cff,
+
+        0 0 45px #ff4fd8;
+
+    }
+
+    to{
+
+        text-shadow:
+
+        0 0 18px #fff,
+
+        0 0 40px #7c5cff,
+
+        0 0 80px #ff4fd8;
+
+    }
+
+}
+
+.content h2{
+
+    animation:subGlow 2.5s ease-in-out infinite alternate;
+
+}
+
+@keyframes subGlow{
+
+    from{
+
+        opacity:.9;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*==================================================
+            MESSAGE FLOAT
+==================================================*/
+
+.content p{
+
+    animation:textFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes textFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+/*=========================================
+        RESTART BUTTON
+=========================================*/
+
+.restart-btn{
+
+    
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #7c5cff,
+        #ff4fd8
+    );
+
+    box-shadow:
+        0 0 25px rgba(124,92,255,.5),
+        0 0 45px rgba(255,79,216,.35);
+
+    transition:.35s ease;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    pointer-events:none;
+
+}
+
+.restart-btn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
+.restart-btn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:
+        0 0 35px rgba(124,92,255,.8),
+        0 0 70px rgba(255,79,216,.5);
+
+}
+
+.restart-btn:active{
+
+    transform:scale(.96);
+
+}   
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .heart-svg{
+
+        width:190px;
+
+        height:190px;
+
+    }
+
+    .content h1{
+
+        font-size:50px;
+
+    }
+
+    .content h2{
+
+        font-size:26px;
+
+    }
+
+    .content p{
+
+        font-size:17px;
+
+        line-height:30px;
+
+    }
+
+    #finishBtn{
+
+        width:auto;
+
+        padding:16px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .heart-svg{
+
+        width:150px;
+
+        height:150px;
+
+    }
+
+    .content h1{
+
+        font-size:40px;
+
+    }
+
+    .content h2{
+
+        font-size:22px;
+
+    }
+
+    .content p{
+
+        font-size:15px;
+
+        line-height:28px;
+
+    }
+
+}
+
+/*==================================================
+            SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#091428;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        180deg,
+
+        #7c5cff,
+
+        #ff4fd8
+
+    );
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff4fd8;
+
+}
+
+/*==================================================
+            THE END ❤️
+==================================================*/
+</style>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="particles"></div>
+
+<section class="final-screen">
+
+<div class="heart-wrapper">
+
+<svg
+class="heart-svg"
+viewBox="0 0 512 512">
+
+<path id="heartPath"
+
+d="M256 464
+L220 432
+C90 320
+40 250
+40 170
+40 90
+105 40
+180 40
+225 40
+255 75
+256 75
+257 75
+287 40
+332 40
+407 40
+472 90
+472 170
+472 250
+422 320
+292 432
+256 464"/>
+
+</svg>
+
+</div>
+
+<div class="content">
+
+<h1>
+
+Wishing You
+
+</h1>
+
+<h2>
+
+A Very Happy &
+Prosperous Birthday
+
+</h2>
+
+<p>
+
+May your life always be filled with happiness,
+success, good health, endless smiles and beautiful memories.
+
+May every dream become reality
+and every day bring new reasons to smile.
+
+Stay blessed,
+stay amazing,
+and keep shining forever.
+
+❤️
+
+</p>
+
+<div class="button-group">
+
+    <button id="finishBtn">
+        Made With Love ❤️
+    </button>
+
+    <button id="restartBtn" class="restart-btn">
+        🔄 Start Again
+    </button>
+
+</div>
+
+</section>
+
+
+
+<script>
+    // ===========================================
+//      FINAL SCREEN JAVASCRIPT
+//      (BUG FREE VERSION)
+// ===========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Elements
+    const restartBtn = document.getElementById("restartBtn");
+    const finishBtn = document.getElementById("finishBtn");
+
+    // ==========================================
+    // SHOW RESTART BUTTON AFTER ANIMATION
+    // ==========================================
+
+    setTimeout(() => {
+
+        restartBtn.classList.add("show");
+
+    }, 4200);
+
+
+    // ==========================================
+    // FINISH BUTTON EFFECT
+    // ==========================================
+
+    finishBtn.addEventListener("click", () => {
+
+        finishBtn.innerHTML = "❤️ Thank You ❤️";
+
+        finishBtn.disabled = true;
+
+        setTimeout(() => {
+
+            finishBtn.innerHTML = "Made With Love ❤️";
+
+            finishBtn.disabled = false;
+
+        }, 1800);
+
+    });
+
+
+    // ==========================================
+    // RESTART BUTTON
+    // ==========================================
+
+    restartBtn.addEventListener("click", () => {
+
+        restartBtn.disabled = true;
+
+        restartBtn.innerHTML = "Loading... ❤️";
+
+        setTimeout(() => {
+
+            window.location.href = "index.html";
+
+        }, 1200);
+
+    });
+
+});
+</script>
+
+</body>
+</html>

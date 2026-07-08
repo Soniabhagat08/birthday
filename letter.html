@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For You ❤️</title>
+
+<style>
+/*==================================================
+                RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/*==================================================
+                ROOT COLORS
+==================================================*/
+
+:root{
+
+    --primary:#7c5cff;
+
+    --secondary:#ff4fd8;
+
+    --gold:#FFD86B;
+
+    --white:#ffffff;
+
+    --text:#dddddd;
+
+}
+
+/*==================================================
+                BACKGROUND
+==================================================*/
+
+.bg{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    background:
+
+    radial-gradient(circle at top,#7c5cff35 0%,transparent 40%),
+
+    radial-gradient(circle at bottom,#ff4fd820 0%,transparent 40%),
+
+    linear-gradient(180deg,#040715,#091428);
+
+}
+
+.bg::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:#7c5cff30;
+
+    filter:blur(140px);
+
+    left:-220px;
+
+    top:-220px;
+
+    animation:leftGlow 10s ease-in-out infinite alternate;
+
+}
+
+.bg::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:#ff4fd820;
+
+    filter:blur(120px);
+
+    right:-180px;
+
+    bottom:-180px;
+
+    animation:rightGlow 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes leftGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes rightGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+}
+
+/*==================================================
+            FLOATING HEARTS
+==================================================*/
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    width:20px;
+
+    height:20px;
+
+    background:#ff4fd8;
+
+    transform:rotate(45deg);
+
+    animation:heartFloat linear infinite;
+
+    box-shadow:
+
+    0 0 12px #ff4fd8,
+
+    0 0 25px #ff4fd8;
+
+}
+
+
+.hearts span::before,
+
+.hearts span::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    background:#ff4fd8;
+
+    border-radius:50%;
+
+}
+
+.hearts span::before{
+
+    left:-10px;
+
+}
+
+.hearts span::after{
+
+    top:-10px;
+
+}
+
+.hearts span:nth-child(1){
+
+    left:8%;
+
+    animation-duration:10s;
+
+}
+
+.hearts span:nth-child(2){
+
+    left:24%;
+
+    animation-duration:12s;
+
+}
+
+.hearts span:nth-child(3){
+
+    left:42%;
+
+    animation-duration:9s;
+
+}
+
+.hearts span:nth-child(4){
+
+    left:60%;
+
+    animation-duration:11s;
+
+}
+
+.hearts span:nth-child(5){
+
+    left:78%;
+
+    animation-duration:13s;
+
+}
+
+.hearts span:nth-child(6){
+
+    left:92%;
+
+    animation-duration:10s;
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:translateY(0) rotate(45deg) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(45deg) scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================================
+            LETTER SCREEN
+==================================================*/
+
+.letter-screen{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+.letter-container{
+
+    width:100%;
+
+    max-width:900px;
+
+    text-align:center;
+
+}
+
+.tag{
+
+    color:#c7beff;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.letter-container h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:82px;
+
+    font-weight:400;
+
+    color:#ffffff;
+
+    text-shadow:
+
+    0 0 15px #ffffff,
+
+    0 0 35px var(--primary),
+
+    0 0 70px var(--secondary);
+
+    margin-bottom:60px;
+
+}
+
+/*==================================================
+                ENVELOPE
+==================================================*/
+
+.envelope{
+
+    position:relative;
+
+    width:380px;
+
+    height:250px;
+
+    margin:0 auto;
+
+    cursor:pointer;
+
+    perspective:1200px;
+
+}
+
+/*==================================================
+                ENVELOPE BODY
+==================================================*/
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #7c5cff,
+        #ff4fd8
+    );
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35),
+    0 0 35px rgba(124,92,255,.45);
+
+}
+
+/*==================================================
+                ENVELOPE FLAP
+==================================================*/
+
+.envelope-top{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        135deg,
+        #9a83ff,
+        #ff78df
+    );
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:1s ease;
+
+    z-index:5;
+
+}
+
+/*==================================================
+                LETTER
+==================================================*/
+
+.letter{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:15px;
+
+    transform:translateX(-50%);
+
+    width:350px;
+
+    height:180px;
+
+    background:#fffdf8;
+
+    color:#444;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    overflow:hidden;
+
+    transition:1s ease;
+
+    z-index:2;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+            LETTER TITLE
+==================================================*/
+
+.letter h2{
+
+    font-family:'Caveat',cursive;
+
+    font-size:34px;
+
+    color:#ff4fd8;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+/*==================================================
+            LETTER TEXT
+==================================================*/
+
+.letter p{
+
+    font-family:'Caveat',cursive;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    text-align:left;
+
+}
+
+/*==================================================
+            OPEN ENVELOPE
+==================================================*/
+
+.envelope.open .envelope-top{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter{
+
+    transform:
+    translateX(-50%)
+    translateY(95px);
+    margin-top: 100px;
+
+    height:520px;
+    width: 500px;
+
+    z-index:20;
+
+}
+/*==================================================
+            OPEN LETTER BUTTON
+==================================================*/
+
+#openLetter,
+#nextBtn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-top:55px;
+    
+
+    padding:18px 55px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:
+        0 0 25px rgba(124,92,255,.45),
+        0 0 60px rgba(255,79,216,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+/*==================================================
+            BUTTON HOVER
+==================================================*/
+
+#openLetter:hover,
+#nextBtn:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 35px rgba(124,92,255,.8),
+        0 0 70px rgba(255,79,216,.5);
+
+}
+
+/*==================================================
+            BUTTON CLICK
+==================================================*/
+
+#openLetter:active,
+#nextBtn:active{
+
+    transform:scale(.96);
+
+}
+
+/*==================================================
+            BUTTON SHINE
+==================================================*/
+
+#openLetter::before,
+#nextBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:40%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.6),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 3s linear infinite;
+
+}
+
+@keyframes buttonShine{
+
+    100%{
+
+        left:180%;
+
+    }
+
+}
+
+/*==================================================
+            BUTTON PULSE
+==================================================*/
+
+#openLetter,
+#nextBtn{
+
+    animation:buttonPulse 2.8s infinite;
+
+}
+
+@keyframes buttonPulse{
+
+    0%,100%{
+
+        box-shadow:
+            0 0 20px rgba(124,92,255,.35),
+            0 0 45px rgba(255,79,216,.2);
+
+    }
+
+    50%{
+
+        box-shadow:
+            0 0 40px rgba(124,92,255,.8),
+            0 0 80px rgba(255,79,216,.5);
+
+    }
+
+}
+
+/*==================================================
+            LETTER FLOAT
+==================================================*/
+
+.letter{
+
+    animation:letterFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes letterFloat{
+
+    0%,100%{
+
+        transform:translateX(-50%) translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) translateY(-8px);
+
+    }
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media (max-width:768px){
+
+    body{
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+
+    .letter-screen{
+        min-height:100vh;
+        padding:30px 15px 60px;
+        align-items:flex-center;
+    }
+
+    .letter-container{
+        width:100%;
+    }
+
+    .letter-container h1{
+        font-size:56px;
+        margin-bottom:20px;
+    }
+
+    .tag{
+        font-size:15px;
+        margin-bottom:12px;
+    }
+
+    .envelope{
+        width:320px;
+        height:220px;
+        margin:40px auto;
+    }
+
+    .envelope-top{
+        height:105px;
+    }
+
+    .letter{
+
+        width:290px;
+        height:180px;
+
+        left:50%;
+        bottom:12px;
+
+        transform:translateX(-50%);
+
+        padding:18px;
+
+        overflow-y:auto;
+    }
+
+    .letter h2{
+        font-size:26px;
+    }
+
+    .letter p{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    .envelope.open .letter{
+
+        width:300px;
+        height:420px;
+
+        transform:translateX(-50%) translateY(-140px);
+
+        margin-top:0;
+    }
+
+    #openLetter,
+    #nextBtn{
+
+        width:300px;
+        max-width:90%;
+
+        padding:15px;
+
+        font-size:17px;
+
+        margin-top:25px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    body{
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+
+    .letter-screen{
+        padding:20px 10px 50px;
+    }
+
+    .letter-container h1{
+        font-size:42px;
+        line-height:1.2;
+    }
+
+    .tag{
+        font-size:13px;
+    }
+
+    .envelope{
+
+        width:280px;
+        height:190px;
+
+        margin:30px auto;
+    }
+
+    .envelope-top{
+        height:90px;
+    }
+
+    .letter{
+
+        width:250px;
+        height:160px;
+
+        padding:16px;
+
+        bottom:10px;
+    }
+
+    .letter h2{
+        font-size:22px;
+    }
+
+    .letter p{
+
+        font-size:16px;
+        line-height:1.7;
+    }
+
+    .envelope.open .letter{
+
+        width:260px;
+        height:380px;
+
+        transform:translateX(-50%) translateY(-120px);
+
+        margin-top:0;
+
+        overflow-y:auto;
+    }
+
+    #openLetter,
+    #nextBtn{
+
+        width:260px;
+        max-width:95%;
+
+        padding:14px;
+
+        font-size:16px;
+
+        margin-top:20px;
+        
+    }
+
+}
+/*==================================================
+                END
+==================================================*/
+</style>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="hearts">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<section class="letter-screen">
+
+<div class="letter-container">
+
+<p class="tag">
+💌 Just One More Thing...
+</p>
+
+<h1>
+A Letter For You
+</h1>
+
+<div class="envelope" id="envelope">
+
+<div class="envelope-top"></div>
+
+<div class="letter" id="letter">
+
+<h2>Dear Mister Sumit ji ❤️</h2>
+
+<p>
+
+Happy Birthday 🎂
+
+<br>
+
+Today isn't just another day.
+
+It's the day someone truly amazing came into this world.
+
+Thank you for every smile, every laugh and every beautiful memory.
+
+I hope this birthday brings endless happiness, success and all the dreams you wish for.
+
+Never stop smiling because your smile makes the world brighter.
+
+May this year be your best one yet.
+
+Happy Birthday once again.
+
+
+<br>
+with love
+
+<br>
+❤️❤️❤️
+
+</p>
+
+</div>
+
+</div>
+
+<button id="openLetter">
+💌 Open Letter
+</button>
+
+<button id="nextBtn" style="display:none;">
+✨ Final Surprise
+</button>
+
+</div>
+
+</section>
+
+<script>
+// =========================================
+//          LETTER SCREEN
+// =========================================
+
+// Elements
+const envelope = document.getElementById("envelope");
+const openLetterBtn = document.getElementById("openLetter");
+const nextBtn = document.getElementById("nextBtn");
+
+// =========================================
+//      OPEN LETTER
+// =========================================
+
+openLetterBtn.addEventListener("click", () => {
+
+    // Prevent multiple clicks
+    openLetterBtn.disabled = true;
+
+    // Open envelope
+    envelope.classList.add("open");
+
+    // Change button text
+    openLetterBtn.innerHTML = "❤️ Letter Opened";
+
+    // Show Final Surprise button after animation
+    setTimeout(() => {
+
+        nextBtn.style.display = "inline-block";
+
+        nextBtn.style.animation = "fadeInUp .8s ease";
+
+    }, 1200);
+
+});
+
+// =========================================
+//      FINAL SURPRISE BUTTON
+// =========================================
+
+nextBtn.addEventListener("click", () => {
+
+    nextBtn.disabled = true;
+
+    nextBtn.innerHTML = "Loading... ❤️";
+
+    setTimeout(() => {
+
+        window.location.href = "final.html";
+
+    }, 1200);
+
+});
+
+// =========================================
+//      FADE IN ANIMATION
+// =========================================
+
+const style = document.createElement("style");
+
+style.innerHTML = `
+@keyframes fadeInUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+`;
+
+document.head.appendChild(style);
+
+
+</script>
+
+</body>
+</html>

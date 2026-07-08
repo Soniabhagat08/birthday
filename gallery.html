@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Beautiful Memories ❤️</title>
+
+    <style>
+        /*==================================================
+            RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/*==================================================
+            ROOT COLORS
+==================================================*/
+
+:root{
+
+    --primary:#7c5cff;
+    --secondary:#ff4fd8;
+    --gold:#FFD86B;
+    --white:#ffffff;
+    --text:#d9d9d9;
+
+}
+
+/*==================================================
+            BACKGROUND
+==================================================*/
+
+.gallery-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    background:
+
+    radial-gradient(circle at top,#7c5cff35 0%,transparent 40%),
+
+    radial-gradient(circle at bottom,#ff4fd825 0%,transparent 40%),
+
+    linear-gradient(180deg,#040715,#091428);
+
+}
+
+/*==================================================
+            GLOW EFFECT
+==================================================*/
+
+.gallery-bg::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:#7c5cff30;
+
+    filter:blur(140px);
+
+    top:-220px;
+
+    left:-200px;
+
+    animation:leftGlow 10s ease-in-out infinite alternate;
+
+}
+
+.gallery-bg::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:#ff4fd820;
+
+    filter:blur(120px);
+
+    bottom:-180px;
+
+    right:-160px;
+
+    animation:rightGlow 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes leftGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes rightGlow{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+}
+
+/*==================================================
+            FLOATING HEARTS
+==================================================*/
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-5;
+
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    width:18px;
+
+    height:18px;
+
+    background:#ff4fd8;
+
+    transform:rotate(45deg);
+
+    animation:heartFloat linear infinite;
+
+}
+
+.floating-hearts span::before,
+
+.floating-hearts span::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    background:#ff4fd8;
+
+    border-radius:50%;
+
+}
+
+.floating-hearts span::before{
+
+    left:-9px;
+
+}
+
+.floating-hearts span::after{
+
+    top:-9px;
+
+}
+
+.floating-hearts span:nth-child(1){
+
+    left:8%;
+    animation-duration:10s;
+
+}
+
+.floating-hearts span:nth-child(2){
+
+    left:25%;
+    animation-duration:12s;
+
+}
+
+.floating-hearts span:nth-child(3){
+
+    left:42%;
+    animation-duration:9s;
+
+}
+
+.floating-hearts span:nth-child(4){
+
+    left:60%;
+    animation-duration:11s;
+
+}
+
+.floating-hearts span:nth-child(5){
+
+    left:78%;
+    animation-duration:13s;
+
+}
+
+.floating-hearts span:nth-child(6){
+
+    left:92%;
+    animation-duration:10s;
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:translateY(0) rotate(45deg) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(45deg) scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================================
+            SPARKLES
+==================================================*/
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-4;
+
+}
+
+.sparkles span{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    box-shadow:
+
+    0 0 8px #fff,
+
+    0 0 18px #7c5cff;
+
+    animation:sparkMove linear infinite;
+
+}
+
+.sparkles span:nth-child(1){
+
+    left:10%;
+    top:20%;
+    animation-duration:5s;
+
+}
+
+.sparkles span:nth-child(2){
+
+    left:30%;
+    top:70%;
+    animation-duration:7s;
+
+}
+
+.sparkles span:nth-child(3){
+
+    left:50%;
+    top:40%;
+    animation-duration:6s;
+
+}
+
+.sparkles span:nth-child(4){
+
+    left:65%;
+    top:15%;
+    animation-duration:8s;
+
+}
+
+.sparkles span:nth-child(5){
+
+    left:80%;
+    top:65%;
+    animation-duration:7s;
+
+}
+
+.sparkles span:nth-child(6){
+
+    left:95%;
+    top:35%;
+    animation-duration:5s;
+
+}
+
+@keyframes sparkMove{
+
+    0%{
+
+        opacity:.2;
+
+        transform:scale(.5);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.5);
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+        transform:scale(.5);
+
+    }
+
+}
+
+/*==================================================
+            MAIN SECTION
+==================================================*/
+
+.gallery-section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:70px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+/*==================================================
+            TAG
+==================================================*/
+
+.gallery-tag{
+
+    color:#bdb6ff;
+
+    letter-spacing:2px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+}
+
+/*==================================================
+            TITLE
+==================================================*/
+
+.gallery-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:82px;
+
+    font-weight:400;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 15px #fff,
+
+    0 0 35px var(--primary),
+
+    0 0 70px var(--secondary);
+
+}
+
+/*==================================================
+            SUBTITLE
+==================================================*/
+
+.gallery-subtitle{
+
+    margin-top:25px;
+
+    max-width:700px;
+
+    color:var(--text);
+
+    font-size:19px;
+
+    line-height:34px;
+
+}
+
+/*==================================================
+            GRID
+==================================================*/
+
+.gallery-grid{
+
+    margin-top:60px;
+
+    width:100%;
+
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    align-items:stretch;
+
+}
+
+/*==================================================
+            PHOTO CARD
+==================================================*/
+.photo-card{
+
+    position:relative;
+
+    width:100%;
+
+    height:360px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s ease;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        0 0 20px rgba(124,92,255,.15);
+
+    display:flex;
+}
+
+.photo-card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:
+
+    0 0 25px rgba(124,92,255,.55),
+
+    0 0 50px rgba(255,79,216,.30);
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s ease;
+
+}
+
+
+.photo-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/*==================================================
+            IMAGE OVERLAY
+==================================================*/
+
+.photo-card::before{
+
+    content:"❤";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:55px;
+
+    color:#fff;
+
+    background:rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:2;
+
+}
+
+.photo-card:hover::before{
+
+    opacity:1;
+
+}
+
+/*==================================================
+            PREVIEW
+==================================================*/
+
+.preview{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(3,6,20,.92);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:.4s ease;
+
+    z-index:999;
+
+}
+
+.preview.active{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+.preview img{
+
+    width:90%;
+
+    max-width:850px;
+
+    max-height:85vh;
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 35px rgba(124,92,255,.55),
+
+    0 0 80px rgba(255,79,216,.30);
+
+}
+
+/*==================================================
+            CLOSE BUTTON
+==================================================*/
+
+.close-btn{
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    font-size:50px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    color:#ff4fd8;
+
+    transform:rotate(90deg);
+
+}
+
+/*==================================================
+            CONTINUE BUTTON
+==================================================*/
+
+#continueBtn{
+
+    margin-top:60px;
+
+    padding:18px 55px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #7c5cff,
+    #ff4fd8
+    );
+
+    box-shadow:
+
+    0 0 25px rgba(124,92,255,.45),
+
+    0 0 50px rgba(255,79,216,.20);
+
+    transition:.35s ease;
+
+}
+
+#continueBtn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:
+
+    0 0 35px rgba(124,92,255,.8),
+
+    0 0 70px rgba(255,79,216,.45);
+
+}
+
+#continueBtn:active{
+
+    transform:scale(.96);
+
+}
+
+/*==================================================
+            BUTTON SHINE
+==================================================*/
+
+#continueBtn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#continueBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:40%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 3s linear infinite;
+
+}
+
+@keyframes buttonShine{
+
+    100%{
+
+        left:180%;
+
+    }
+
+}
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.gallery-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery-title{
+
+font-size:62px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.photo-card{
+
+height:260px;
+
+}
+
+.gallery-title{
+
+font-size:48px;
+
+}
+
+.gallery-tag{
+
+font-size:15px;
+
+}
+
+.gallery-subtitle{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+#continueBtn{
+
+width:100%;
+
+padding:16px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.gallery-title{
+
+font-size:38px;
+
+}
+
+.photo-card{
+
+height:220px;
+
+}
+
+.gallery-subtitle{
+
+font-size:15px;
+
+}
+
+.close-btn{
+
+font-size:40px;
+
+right:20px;
+
+}
+
+}
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="gallery-bg"></div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <!-- Floating Sparkles -->
+    <div class="sparkles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <!-- =========================
+            GALLERY SECTION
+    ========================== -->
+
+    <section class="gallery-section">
+
+        <p class="gallery-tag">
+            ✨ Every Picture Holds A Memory ✨
+        </p>
+
+        <h1 class="gallery-title">
+            Our Beautiful Memories ❤️
+        </h1>
+
+        <p class="gallery-subtitle">
+            Every smile, every moment, every memory with you is truly special.
+        </p>
+
+        <!-- Photo Grid -->
+        <div class="gallery-grid">
+            
+
+            <div class="photo-card">
+
+    <img src="images/photo1.jpeg" alt="Memory 1">
+
+    
+
+</div>
+            
+           <div class="photo-card">
+
+    <img src="images/photo2.jpeg" alt="Memory 1">
+
+   
+
+</div>
+
+           <div class="photo-card">
+
+    <img src="images/photo3.jpeg" alt="Memory 1">
+
+    
+
+</div>
+
+            <div class="photo-card">
+
+    <img src="images/photo4.jpeg" alt="Memory 1">
+
+    
+
+</div>
+<div class="photo-card">
+
+    <img src="images/photo5.jpeg" alt="Memory 1">
+
+   
+
+</div>
+
+            <div class="photo-card">
+                <img src="images/photo6.jpeg" alt="Memory 6">
+            </div>
+
+        </div>
+
+        <!-- Continue Button -->
+
+        <button id="continueBtn">
+
+            🎁 Continue Surprise
+
+        </button>
+
+    </section>
+
+    <!-- =========================
+          IMAGE PREVIEW
+    ========================== -->
+
+    <div class="preview" id="preview">
+
+        <span class="close-btn" id="closeBtn">
+
+            &times;
+
+        </span>
+
+        <img src="" id="previewImg" alt="Preview">
+
+    </div>
+
+    <script>
+        // =========================================
+//          GALLERY SCREEN
+// =========================================
+
+// Elements
+const photoCards = document.querySelectorAll(".photo-card");
+const preview = document.getElementById("preview");
+const previewImg = document.getElementById("previewImg");
+const closeBtn = document.getElementById("closeBtn");
+const continueBtn = document.getElementById("continueBtn");
+
+// =========================================
+//      IMAGE PREVIEW
+// =========================================
+
+photoCards.forEach((card) => {
+
+    card.addEventListener("click", () => {
+
+        const img = card.querySelector("img");
+
+        previewImg.src = img.src;
+
+        preview.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+// =========================================
+//      CLOSE PREVIEW
+// =========================================
+
+closeBtn.addEventListener("click", () => {
+
+    preview.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+
+});
+
+// =========================================
+//   CLOSE WHEN CLICK OUTSIDE IMAGE
+// =========================================
+
+preview.addEventListener("click", (e) => {
+
+    if (e.target === preview) {
+
+        preview.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+
+    }
+
+});
+
+// =========================================
+//      ESC KEY SUPPORT
+// =========================================
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        preview.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+
+    }
+
+});
+
+// =========================================
+//      CONTINUE BUTTON
+// =========================================
+
+continueBtn.addEventListener("click", () => {
+
+    continueBtn.disabled = true;
+
+    continueBtn.innerHTML = "Loading... ❤️";
+
+    setTimeout(() => {
+
+        window.location.href = "letter.html";
+
+    }, 1200);
+
+});
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Mister ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="birthday-bg"></div>
+
+<!-- Floating Hearts -->
+
+<div class="birthday-hearts">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<!-- Main Section -->
+
+<section class="birthday-screen">
+
+<div class="birthday-content">
+
+<h1 class="birthday-title">
+
+Happy Birthday
+
+</h1>
+
+<h2 class="birthday-name">
+
+Mister Sumit ji❤️
+
+</h2>
+
+<div class="cake-area">
+
+<!-- ==========================================
+                CAKE
+========================================== -->
+
+<div class="cake">
+
+    <!-- Candle 1 -->
+    <div class="candle candle1">
+        <div class="flame"></div>
+    </div>
+
+    <!-- Candle 2 -->
+    <div class="candle candle2">
+        <div class="flame"></div>
+    </div>
+
+    <!-- Candle 3 -->
+    <div class="candle candle3">
+        <div class="flame"></div>
+    </div>
+
+    <!-- Top Layer -->
+    <div class="cake-layer top-layer">
+
+        <div class="cream"></div>
+
+    </div>
+
+    <!-- Middle Layer -->
+    <div class="cake-layer middle-layer">
+
+        <div class="cream"></div>
+
+    </div>
+
+    <!-- Bottom Layer -->
+    <div class="cake-layer bottom-layer">
+
+        <div class="cream"></div>
+
+    </div>
+
+    <!-- Cake Plate -->
+    <div class="cake-plate"></div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+            BIRTHDAY MESSAGE
+========================================== -->
+
+<p class="birthday-message" id="typeWriter">
+
+    <!-- JavaScript will type here -->
+
+</p>
+
+<!-- ==========================================
+            CONTINUE BUTTON
+========================================== -->
+
+<button class="next-btn" id="nextBtn">
+
+Continue for next Surprise
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+            MUSIC
+========================================== -->
+
+<audio id="birthdayMusic" loop>
+
+    <source src="music/happy-birthday.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+    // =========================
+// ELEMENTS
+// =========================
+
+const typeWriter = document.getElementById("typeWriter");
+const nextBtn = document.getElementById("nextBtn");
+const music = document.getElementById("birthdayMusic");
+
+// =========================
+// TYPEWRITER TEXT
+// =========================
+
+const message = "Wishing you a magical birthday filled with love, happiness, and endless success ❤️✨";
+
+let i = 0;
+
+function typeEffect() {
+    if (i < message.length) {
+        typeWriter.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeEffect, 50);
+    }
+}
+
+// start typing on load
+window.addEventListener("load", () => {
+    typeEffect();
+});
+
+// =========================
+// MUSIC PLAY (browser safe)
+// =========================
+
+function playMusic() {
+    if (music) {
+        music.volume = 0.5;
+        music.play().catch(() => {
+            console.log("User interaction required for audio");
+        });
+    }
+}
+
+// =========================
+// CONFETTI (simple effect)
+// =========================
+
+function createConfetti() {
+    for (let i = 0; i < 30; i++) {
+        let confetti = document.createElement("div");
+
+        confetti.style.position = "fixed";
+        confetti.style.width = "8px";
+        confetti.style.height = "8px";
+        confetti.style.background = getRandomColor();
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = "-10px";
+        confetti.style.zIndex = "9999";
+        confetti.style.borderRadius = "50%";
+
+        document.body.appendChild(confetti);
+
+        let fall = setInterval(() => {
+            let top = parseFloat(confetti.style.top);
+            confetti.style.top = top + 5 + "px";
+
+            if (top > window.innerHeight) {
+                clearInterval(fall);
+                confetti.remove();
+            }
+        }, 20);
+    }
+}
+
+function getRandomColor() {
+    const colors = ["#ff2e93", "#00e5ff", "#ffffff", "#f9d423"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// =========================
+// CANDLE BLOW EFFECT
+// =========================
+
+function blowCandles() {
+    const flames = document.querySelectorAll(".flame");
+
+    flames.forEach((flame, index) => {
+        setTimeout(() => {
+            flame.style.opacity = "0";
+            flame.style.transform = "scale(0)";
+        }, index * 300);
+    });
+}
+
+// =========================
+// BUTTON CLICK EVENT
+// =========================
+
+nextBtn.addEventListener("click", () => {
+
+    // music start
+    playMusic();
+
+    // confetti blast
+    createConfetti();
+
+    // candle blow animation
+    blowCandles();
+
+    // button text change
+    //nextBtn.innerText = "✨ Opening Message...";
+
+    // fake transition delay (next screen idea)
+    setTimeout(() => {
+        
+        
+        // Example redirect (uncomment when ready)
+        window.location.href = "gallery.html";
+
+    }, 2000);
+});
+</script>
+
+</body>
+
+</html>
